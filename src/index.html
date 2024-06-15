@@ -94,17 +94,34 @@
     <div class="cursor-pointer hover:text-softred">Trending</div>
     <div class="cursor-pointer hover:text-softred">Categories</div>
   </nav>
+  
+  <script src="js/anime.min.js"></script>
   <script>
     document.getElementById('menu').addEventListener('click', function() {
       document.getElementById('overlay').classList.remove('hidden');
       document.getElementById('m-nav').classList.remove('hidden');
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add('fixed');
+      
+      anime({
+        targets: '#m-nav',
+        translateX: ['100%', 0],
+        duration: 200,
+        easing: 'linear'
+      });
     });
     
     document.getElementById('menu_close').addEventListener('click', function() {
       document.getElementById('overlay').classList.add('hidden');
-      document.getElementById('m-nav').classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove('fixed');
+      anime({
+        targets: '#m-nav',
+        translateX: '100%',
+        duration: 100,
+        easing: 'linear',
+        complete: function(anim) {
+          document.getElementById('m-nav').classList.add('hidden');
+        }
+      });
     });
   </script>
 </body>
