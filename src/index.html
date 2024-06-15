@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-offwhite font-Inter mb-16">
+  <!-- <h1 class="text-3xl text-softorange font-Inter">
+    Hello world! Russel
+  </h1> -->
+  <div class="max-w-[1440px] mx-auto w-full px-6">
+    <header class="flex justify-between items-center mt-14">
+      <div><img src="../assets/logo.svg"></div>
+      <nav class="lg:flex hidden space-x-10 text-grayishblue">
+        <div class="cursor-pointer hover:text-softred">Home</div>
+        <div class="cursor-pointer hover:text-softred">New</div>
+        <div class="cursor-pointer hover:text-softred">Popular</div>
+        <div class="cursor-pointer hover:text-softred">Trending</div>
+        <div class="cursor-pointer hover:text-softred">Categories</div>
+      </nav>
+      <button id="menu" class="lg:hidden"><img src="../assets/icon-menu.svg" /></button>
+    </header>
+    
+    <section class="lg:grid grid-cols-3 gap-12 mt-16 ">
+      <div class="col-span-2 lg:grid gap-12">
+        <img src="../assets/image-web-3-desktop.jpg" class="lg:h-auto h-[350px] w-full object-cover lg:mb-0 mb-12"/>
+        <div class="lg:grid grid-cols-2 gap-12">
+          <div class="text-[55px] font-black leading-tight font-Inter lg:mb-0 mb-12">The Bright Future of<br>Web 3.0?</div>
+          <div>
+            <p class="text-grayishblue text-lg">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fullfiling its promise? </p>
+            <button class="text-darkblue bg-softred mt-10 px-9 py-3 font-bold hover:bg-darkblue hover:text-offwhite lg:mb-0 mb-12">READ MORE</button>
+          </div>
+        </div>
+      </div>
+      <div class="w-full">
+        <div class="text-offwhite bg-darkblue p-12 w-full">
+          <div class="text-softorange text-[40px] font-semibold pb-8">New</div>
+          
+          <div class="space-y-10">
+            <div>
+              <div class="font-semibold text-xl cursor-pointer hover:text-softorange">Hydrogen VS Electric Cars</div>
+              <p class="text-grayishblue">Will hydrogen-fueled cars ever catch up to EVs?</p>
+            </div>
+            <hr>
+            <div>
+              <div class="font-semibold text-xl cursor-pointer hover:text-softorange">The Downsides of AI Artistry</div>
+              <p class="text-grayishblue">What are the possible adverse effects of on-demand AI image generation?</p>
+            </div>
+            <hr>
+            <div>
+              <div class="font-semibold text-xl cursor-pointer hover:text-softorange">Is VC Funding Drying Up?</div>
+              <p class="text-grayishblue">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="lg:grid grid-cols-3 gap-12 mt-20 lg:space-y-0 space-y-10">
+      <div class="grid grid-cols-3 gap-6">
+        <div><img src="../assets/image-retro-pcs.jpg" width="100%" /></div>
+        <div class="col-span-2">
+          <div class="text-softred text-4xl font-bold">01</div>
+          <div class="text-xl font-bold cursor-pointer hover:text-softred">Reviving Retro PC</div>
+          <p class="text-grayishblue text-xl">What happens  when old PCs are given modern upgrades?</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-6">
+        <div><img src="../assets/image-top-laptops.jpg" width="100%" /></div>
+        <div class="col-span-2">
+          <div class="text-softred text-4xl font-bold">02</div>
+          <div class="text-xl font-bold cursor-pointer hover:text-softred">Top 10 Laptops of 2022</div>
+          <p class="text-grayishblue text-xl">Our best picks for various needs and budgets.</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-6">
+        <div><img src="../assets/image-gaming-growth.jpg" width="100%" /></div>
+        <div class="col-span-2">
+          <div class="text-softred text-4xl font-bold">03</div>
+          <div class="text-xl font-bold cursor-pointer hover:text-softred">The Growth of Gaming</div>
+          <p class="text-grayishblue text-xl">How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div id="overlay" class="hidden absolute top-0 w-full h-full bg-darkblue opacity-40"></div>
+  <nav id="m-nav" class="hidden space-y-6 text-darkblue text-lg absolute top-0 w-[75%] bg-offwhite h-full right-0 p-12">
+    <img id="menu_close" src="../assets/icon-menu-close.svg" class="mb-20 float-right" />
+    <div class="clear-both"></div>
+    <div class="cursor-pointer hover:text-softred">Home</div>
+    <div class="cursor-pointer hover:text-softred">New</div>
+    <div class="cursor-pointer hover:text-softred">Popular</div>
+    <div class="cursor-pointer hover:text-softred">Trending</div>
+    <div class="cursor-pointer hover:text-softred">Categories</div>
+  </nav>
+  <script>
+    document.getElementById('menu').addEventListener('click', function() {
+      document.getElementById('overlay').classList.remove('hidden');
+      document.getElementById('m-nav').classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+    
+    document.getElementById('menu_close').addEventListener('click', function() {
+      document.getElementById('overlay').classList.add('hidden');
+      document.getElementById('m-nav').classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+  </script>
+</body>
+</html>
